@@ -1,1 +1,1 @@
- java $JAVA_OPTS -jar target/*.war --spring.profiles.active=prod,native,heroku --server.port=$PORT
+web: java $JAVA_OPTS -jar target/*.war --port $PORT
