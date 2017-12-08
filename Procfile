@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -war web-service/target/FarmHandEnterprise.war --server.port=$PORT
+web: java $JAVA_OPTS -jar web-service/target/FarmHandEnterprise.war --server.port=$PORT
