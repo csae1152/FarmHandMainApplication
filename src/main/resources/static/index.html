@@ -4,17 +4,84 @@
 <title>FarmHand</title>
 <link rel="stylesheet" type="text/css"
   href="/webjars/bootstrap/css/bootstrap.min.css" />
-  
+  <link rel="stylesheet" type="text/css" href="../css/main.css" />
 <link rel="shortcut icon" type="image/x-icon" href="web/images/favicon.ico">
 <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 <script type="text/javascript"
   src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  <link href="web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+  <link href="css/login.css" rel='stylesheet' type='text/css' />
+
+  <link rel="shortcut icon" type="image/x-icon" href="web/images/favicon.ico">
+
+  <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="web/js/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  
+  <!-- Include vue.js-->
+  <script src="https://unpkg.com/vue"></script>
+
+  <script src="js/login.js"></script>
+
+  <script src="js/variables.js"></script>
+
+  <script src=""></script>
+
+  <!---- start-smoth-scrolling---->
+  <script type="text/javascript" src="web/js/move-top.js"></script>
+  <script type="text/javascript" src="web/js/easing.js"></script>
+
+  <!---- start-smoth-scrolling---->
+  <!-- Custom Theme files -->
+  <link href="web/css/theme-style.css" rel='stylesheet' type='text/css' />
+
+  <!-- Auth0 lock script -->
+  <script src="//cdn.auth0.com/js/lock-7.5.min.js"></script>
+
+  <!-- Setting the right viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+  <!-- Custom Theme files -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ 
+  <!----font-Awesome----->
+  <link rel="stylesheet" href="web/fonts/css/font-awesome.min.css">
+      <!----font-Awesome----->
+    <!----webfonts---->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <!----start-top-nav-script---->
+  <script>
+  $(function() {
+    var pull 		= $('#pull');
+    menu 		= $('nav ul');
+    menuHeight	= menu.height();
+    $(pull).on('click', function(e) {
+      e.preventDefault();
+      menu.slideToggle();
+    });
+    $(window).resize(function(){
+      var w = $(window).width();
+      if(w > 320 && menu.is(':hidden')) {
+        menu.removeAttr('style');
+      }
+    });
+  });
+
+  </script>
+  <!----//End-top-nav-script---->
+  
 </head>
 
 <body>
   <div class="container">
-    <h1>Welcome to FarmHand</h1>
-    <div><app/></div>
+ 
+    <!--   <div><farmhand/></div> -->
   </div>
   <script type="text/javascript" src="webjars/core-js/client/shim.min.js"></script>
   <script type="text/javascript" src="webjars/rxjs/bundles/Rx.min.js"></script>
@@ -35,5 +102,176 @@
       ng.platformBrowserDynamic.platformBrowserDynamic().bootstrapModule(AppModule);
     });
   </script>
+  <!----start-container---->
+<!----start-header---->
+<div id="home" class="header scroll">
+  <div class="container">
+    <!---- start-logo---->
+    <!--
+<div class="logo">
+<a href="index.html"><img src="web/images/logo.png" title="Mabur" /></a>
+</div>
+    -->
+    <!---- //End-logo---->
+    <!----start-top-nav---->
+    <nav class="top-nav">
+      <ul class="top-nav">
+        <li class="active"><a href="#home" class="scroll">Home</a></li>
+        <li class="page-scroll"><a href="#fea" class="scroll">Features</a></li>
+        <li class="page-scroll"><a href="#wor" class="scroll">Portfolio</a></li>
+
+        <li><a ng-click="login()" class="btn btn-primary
+               btn-lg btn-login btn-block login-box auth0-box before" style="text-align: left">Sign up</a></li>
+      </ul>
+      <a href="#" id="pull"><img src="web/images/nav-icon.png" title="menu" /></a>
+    </nav>
+    <!-- 				<div class="clearfix"> </div>
+            <div class="slide-text text-center">
+                <h1>Predictive analytics for Your Farm</h1>
+                <span></span>
+                <a class="slide-btn" href="index_dashboard.html">First draft - Have a look ...</a>
+
+            </div>
+             -->
+
+    <div class="slide-text text-center">
+      <div class="login-page clearfix">
+        <div class="login-box auth0-box before">
+            <h2>
+            <span style="text-align: left; font-weight: bold; color:#000000">FarmHand</span>
+            </h2>
+          <h5>
+            <span style="text-align: left; color:#000000">Automatically Detect Chronic Diseases <br>
+              Through Retinal Scans via your Smartphone.</span>
+          </h5>
+          <!--
+            <h6><span style="text-align: left; color:#000000">Chronic disease prevention through</span></h6>
+             <h6><span style="text-align: left; color:#000000">retinal image anaylsis via your smartphone.</span></h6>
+       -->
+        </div>
+        <div class="logged-in-box auth0-box logged-in" style="text-align: left; display: none;">
+          <h2>Welcome <span class="nickname"></span></h2>
+          <a class="slide-btn" href="index_dashboard.html">Go to your Dashboards...</a>
+        </div>
+      </div>
+    </div>
+
+    <!----//End-top-nav---->
+  </div>
+</div>
+<!----//End-header---->
+<!----start-feartures----->
+<div id="fea" class="features">
+  <div class="container">
+    <div class="head text-center">
+      <h3><span> </span> Our Features</h3>
+      <p>With our platform you will be able to collaborate with other agricultural workers around the world.</p>
+    </div>
+    <!---- start-features-grids---->
+    <div class="features-grids text-center">
+      <div class="col-md-3 features-grid">
+        <span class="fea-icon1"><i class="fa fa-star"> </i> </span>
+        <h3><a href="#">Share value</a></h3>
+        <p>Wouldn't it be great to share your values with colleagues around the world to help them improving their work so that we can gain substainance. </p>
+      </div>
+      <div class="col-md-3 features-grid">
+        <span class="fea-icon1"><i class="fa fa-thumbs-up"> </i> </span>
+        <h3><a href="#">Share farm devices</a></h3>
+        <p>We will also provide an exchange app for reusing and sharing the really expensive agricultural devices.</p>
+      </div>
+      <div class="col-md-3 features-grid">
+        <span class="fea-icon1"><i class="fa fa-tachometer"> </i> </span>
+        <h3><a href="#">Share knowledge</a></h3>
+        <p>With our new data collector and predictive engine we will let you know what happens tomorrow.</p>
+      </div>
+      <div class="col-md-3 features-grid">
+        <span class="fea-icon1"><i class="fa fa-mobile"> </i> </span>
+        <h3><a href="#">Share interests</a></h3>
+        <p>Stay in contact with our social network graph feature to find mates with similiar interests.</p>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+    <!---- //End-features-grids---->
+  </div>
+</div>
+<!----//End-feartures----->
+<!---- start-work---->
+<div id ="wor" class="work">
+  <div class="container">
+    <div class="head text-center work-head">
+      <h3><span> </span>How our platform works</h3>
+      <p>It's easy as pie. Register and start discovering how we can help you getting better.</p>
+    </div>
+    <!---- start-work-grids----->
+    <div class="work-grids">
+      <div class="col-md-4 work-grid">
+        <span class="col-md-5 w-icon"> <i class="fa fa-search"> </i></span>
+        <div class="col-md-7 work-info">
+          <h4>Computer Aided diagnosis</h4>
+          <p>Upload an image of your cows eye (retina) and our diagnose engine will tell you what's happening. </p>
+        </div>
+      </div>
+      <div class="col-md-4 work-grid center-work-grid">
+        <span class="col-md-5 w-icon"> <i class="fa fa-cogs"> </i></span>
+        <div class="col-md-7 work-info">
+          <h4>Collect your values</h4>
+          <p>With our new ISO-BUS we can connect your farm devices and collect the data they are producing.</p>
+        </div>
+      </div>
+      <div class="col-md-4 work-grid">
+        <span class="col-md-5 w-icon"><i class="fa fa-code"> </i> </span>
+        <div class="col-md-7 work-info">
+          <h4>Analyse and Predicit</h4>
+          <p>With our predictive analysis engine we will help you to bring out the best of your farm. Our generated dashboards will provide you an overview of what you did great and ho we can improve your performance.</p>
+        </div>
+      </div>
+
+      <div class="clearfix"> </div>
+      <div class="work-map">
+        <span> </span>
+      </div>
+    </div>
+    <!---- //End-work-grids----->
+  </div>
+</div>
+<!---- //End-work---->
+<!----start-portfolio----->
+
+<div class="clearfix"> </div>
+<!----//End-portfolio----->
+<!----start-blog---->
+<div class="footer">
+  <div class="container">
+    <div id ="contact" class="footer-left">
+      <p>@Helmut Steiner, For more information send me an email: &#099;&#115;&#097;&#101;&#049;&#049;&#053;&#050;&#064;&#103;&#109;&#120;&#046;&#097;&#116;</p>
+
+	<a href="https://twitter.com/steiner_helmut" class="icon fa-twitter"><span class="label">Twitter</span></a>
+	<a href="https://github.com/csae1152/MyPredictiveFarm" class="icon fa-github"><span class="label">GitHub</span></a>
+	<a href="https://plus.google.com/u/0/communities/118045655178910862948" class="icon fa-google-plus"><span class="label">Google+</span></a>
+        <a data-pin-do="buttonFollow" href="https://de.pinterest.com/csae1152/mypredictivefarm/">Pinterest</a>
+
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        /*
+         var defaults = {
+         containerID: 'toTop', // fading element id
+         containerHoverID: 'toTopHover', // fading element hover id
+         scrollSpeed: 1200,
+         easingType: 'linear'
+         };
+         */
+
+        $().UItoTop({ easingType: 'easeOutQuart' });
+
+      });
+    </script>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+  </div>
+</div>
+<!----//End-footer---->
+<!----//End-container---->
+  
+  
 </body>
 </html>
