@@ -1,4 +1,3 @@
 # FarmHandMainApplication
-FarmHand Single Page Application.
 
-What we want to achive?
+Farm management software designed to help you run a more predictable farm.
