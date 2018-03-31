@@ -31,6 +31,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="web/images/favicon.ico">
 
     <link rel="stylesheet" href="css/dropzone.css">
+    <script type = "text/javascript" >
+    function preventBack(){window.history.forward();}
+    setTimeout("preventBack()", 0);
+    window.onunload=function(){null};
+</script>
   </head>
   <body class="skin-blue sidebar-mini" onload="init()">
     <div class="wrapper">
