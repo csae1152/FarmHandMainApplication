@@ -115,8 +115,16 @@
     <artifactId>postgresql</artifactId>
 </dependency>
 
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
 
-
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt</artifactId>
+    <version>0.7.0</version>
+</dependency>
 
 <dependency>
 	<groupId>com.h2database</groupId>
@@ -195,11 +203,23 @@
     <version>8.5.23.1</version>
 </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
-			<optional>true</optional>
-		</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-configuration-processor</artifactId>
+	<optional>true</optional>
+</dependency>
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt</artifactId>
+    <version>0.7.0</version>
+</dependency>
+
 	</dependencies>
 
 	<build>
@@ -207,8 +227,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			
-			
 			</plugin>
 			 <plugin>
             <groupId>org.apache.maven.plugins</groupId>
