@@ -3,7 +3,9 @@
  */
 package com.farmhand.enterprise.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -12,8 +14,14 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "retina_images")
 public class RetinaImages {
+	@Id
+	Long id;
 	
+	@Column(name = "firstname")
+	private String firstName;
+	
+	@Column(name = "lastname")
+	private String lastName;	
 
 }
